@@ -23,7 +23,8 @@ class ExecHelpers {
     return result;
   }
   static String exec(String[] cmd) throws IOException {
-    Process p = new ProcessBuilder().command(Arrays.asList(cmd)).redirectErrorStream(true).start();
+    //Process p = new ProcessBuilder().command(Arrays.asList(cmd)).redirectErrorStream(true).start();
+    Process p = new ProcessBuilder().command(Arrays.asList(cmd)).start();
     InputStream out = p.getInputStream();
 //    InputStream err = p.getErrorStream();
     return String.format("%s\n", streamToString(out));
