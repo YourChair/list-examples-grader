@@ -12,7 +12,7 @@ public class TestListExamples {
   // Write your grading tests here!
 
   int passCount = 0;
-  @Test (timeout=200)
+  @Test
   public void TestFilter() {
     StringChecker checkerA = new aChecker();
     List<String> expected = new ArrayList<>();
@@ -29,18 +29,16 @@ public class TestListExamples {
 
     assertEquals(expected, ListExamples.filter(toFilter, checkerA));
     
-    
   }
 
-  @Test (timeout=200)
   public void TestMerge() {
+    StringChecker checkerA = new aChecker();
     List<String> input1 = new ArrayList<>();
     List<String> input2 = new ArrayList<>();
     List<String> expected = new ArrayList<>();
     input1.add("a");
     input1.add("b");
     input1.add("d");
-    input1.add("e");
     input1.add("g");
     input1.add("i");
     input1.add("k");
@@ -50,7 +48,6 @@ public class TestListExamples {
     input2.add("f");
     input2.add("h");
     input2.add("j");
-    input2.add("k");
     input2.add("l");
 
     expected.add("a");
@@ -58,13 +55,11 @@ public class TestListExamples {
     expected.add("c");
     expected.add("d");
     expected.add("e");
-    expected.add("e");
     expected.add("f");
     expected.add("g");
     expected.add("h");
     expected.add("i");
     expected.add("j");
-    expected.add("k");
     expected.add("k");
     expected.add("l");
     
